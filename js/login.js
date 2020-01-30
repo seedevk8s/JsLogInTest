@@ -17,8 +17,19 @@ function bindLoginButton() {
     form.addEventListener('submit', login);
 }
 
-function login() {
+function login(event) {
+    event.preventDefault(); // submit 이벤트 원래의 형태데로는 안되게함.
+    event.stopPropagation(); //이벤트가 상위로 전달되지 않게 막아줌
 
+    // 아래 각 dom을 얻어옴
+    const emailElement = document.querySelector('#email');
+    const  passwordElement = document.querySelector('#password');
+
+    // dom에 있는 실제 값을 얻어 와야함. => string
+    const email = emailElement.value;
+    const password = passwordElement.value;
+
+    console.log(email, password);
 
 }
 
