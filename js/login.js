@@ -14,6 +14,37 @@ function bindLoginButton() {
 }
 
 function login() {
-    
+    const token = getToken();
+
 }
+
+function getToken() {
+    return localStorage.getItem('token');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
