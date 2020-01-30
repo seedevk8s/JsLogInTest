@@ -5,7 +5,11 @@ function main() {
     bindLoginButton();
 
     // 토큰 체크
-
+    const token = getToken();
+    if (token !== null) {
+        location.assign('/');
+        return;
+    }
 }
 
 function bindLoginButton() {
@@ -14,7 +18,7 @@ function bindLoginButton() {
 }
 
 function login() {
-    const token = getToken();
+
 
 }
 
