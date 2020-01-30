@@ -35,7 +35,7 @@ async function login(event) {
             email: email,
             password: password
         });
-    }catch (e) {
+    }catch (error) {
         
     }
 }
