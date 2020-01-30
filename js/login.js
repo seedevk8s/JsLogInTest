@@ -42,9 +42,20 @@ async function login(event) {
             return ;            // 그냥 끝냄
         }
 
+        localStorage.setItem('token', token);
+        location.assign('/');
 
     }catch (error) {
-        
+        const data = error.response.data;
+        if(data) {
+            const state = data.error;
+            if(state === 'USER_NOT_EXIST') {
+                alert('사용자가 존재하지 않습니다.');
+            } else if(state === 'PASSWORD_NOT_MATCH') {
+                alert('비밀번호가 틀렸습니다.');
+            }
+        }
+
     }
 }
 
