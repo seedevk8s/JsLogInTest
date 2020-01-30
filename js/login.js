@@ -28,9 +28,13 @@ function login(event) {
     // dom에 있는 실제 값을 얻어 와야함. => string
     const email = emailElement.value;
     const password = passwordElement.value;
-
     console.log(email, password);
 
+    try {
+        
+    }catch (e) {
+        
+    }
 }
 
 function getToken() {
