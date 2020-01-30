@@ -31,13 +31,17 @@ async function login(event) {
     console.log(email, password);
 
     try {
-        const res = await axios.post('https://api.karktube.tv/v1/me', {
+        const res = await axios.post('https://api.marktube.tv/v1/me', {
             email: email,
             password: password
         });
 
         //정상적인 처리의 경우
-        const { } = res.data;
+        const { token } = res.data;     // const token = res.data.token 이 의미임.
+        if (token === undefined) {
+            return ;            // 그냥 끝냄
+        }
+
 
     }catch (error) {
         
