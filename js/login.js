@@ -17,7 +17,7 @@ function bindLoginButton() {
     form.addEventListener('submit', login);
 }
 
-function login(event) {
+async function login(event) {
     event.preventDefault(); // submit 이벤트 원래의 형태데로는 안되게함.
     event.stopPropagation(); //이벤트가 상위로 전달되지 않게 막아줌
 
@@ -31,7 +31,10 @@ function login(event) {
     console.log(email, password);
 
     try {
-        
+        const res = await axios.post('https://api.karktube.tv/v1/me', {
+            email: email,
+            password: password
+        });
     }catch (e) {
         
     }
