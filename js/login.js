@@ -35,6 +35,10 @@ async function login(event) {
             email: email,
             password: password
         });
+
+        //정상적인 처리의 경우
+        const { } = res.data;
+
     }catch (error) {
         
     }
